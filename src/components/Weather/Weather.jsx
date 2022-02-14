@@ -56,7 +56,9 @@ function Weather() {
             </div>
 
             <div className={s.tempBox}>
-                <div className={s.temperature}> {weather.temp_c} </div>
+                {weather.temp_c &&
+                    <div className={s.temperature}> {weather.temp_c + '°c'} </div>
+                }
             </div>
 
             <div className={s.weatherBox}>
