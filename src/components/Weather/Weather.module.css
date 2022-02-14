@@ -1,0 +1,105 @@
+body {
+    background-color: lightgreen;
+}
+@media only screen and (max-width: 1600px) {
+    body {
+        background-image: url('../../assets/city-wallpaper.jpg');
+        background-size: 1536px 724px;
+        /* background-size: cover; */
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        background-image: url('../../assets/default-night.jpg');
+        background-size: 400px auto;
+        padding: 30px;
+    }
+}
+
+.searchBox {
+    width: 100%;
+    margin: 0 0 75px 0;
+    padding: 10px;
+
+    appearance: none;
+    border: none;
+    outline: none;
+
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 16px 16px;
+
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.25s ease-in-out;
+
+    margin-top: -25x;
+}
+
+.searchBox:focus {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.name {
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 32px;
+    text-shadow: 3px 2px rgba(50, 50, 70, 0.5);
+}
+
+
+.date {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    text-shadow: 2px 2px rgba(50, 60, 70, 0.5);
+}
+
+.tempBox {
+    text-align: center;
+}
+
+.temperature {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: 100px;
+    font-weight: 600;
+    color: white;
+
+    margin: 40px 0 0 0;
+    padding: 16px 16px;
+    display: inline-block;
+    border-radius: 15px;
+
+    text-shadow: 5px 4px rgba(128, 128, 128, 0.7);
+    box-shadow: 2px 5px rgba(128, 128, 128, 0.7);
+}
+
+.weatherBox {
+    text-align: center;
+    margin: 15px;
+}
+
+.condition {
+    text-align: center;
+    background-color: rgba(139, 121, 204, 0.466);
+    color: white;
+    font-size: 24px;
+
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: -30px;
+
+    text-shadow: 3px 2px rgba(128, 128, 128, 0.7);
+    box-shadow: 2px 5px rgba(128, 128, 128, 0.7);
+    /* display: inline; */
+}
+
+.icon {
+    margin-top: -5px;
+    position: absolute;
+    display: inline;
+}
+

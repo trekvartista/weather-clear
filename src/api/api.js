@@ -20,8 +20,8 @@ const axios = Axios.create({
 })
 
 export const weatherAPI = {
-    requestCurrentWeather: () => {
-        return axios.get(`/current.json?q=bishkek&aqi=no`)
+    requestCurrentWeather: (input) => {
+        return axios.get(`/current.json?q=${input}&aqi=no`)
                     // .then(function (response) {
             	    //     console.log(response.data);
                     // })
