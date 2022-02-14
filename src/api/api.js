@@ -14,16 +14,16 @@ import Axios from "axios";
 
 const axios = Axios.create({
     baseURL: 'http://api.weatherapi.com/v1',
-    // headers: {
-    //     'key': '806aa4362e50400e988173920221302'
-    // }
+    params: {
+        key: '806aa4362e50400e988173920221302'
+    }
 })
 
 export const weatherAPI = {
     requestCurrentWeather: () => {
-        return axios.get(`/current.json?key=806aa4362e50400e988173920221302&q=bishkek&aqi=no`)
-                    .then(function (response) {
-            	        console.log(response.data);
-                    })
+        return axios.get(`/current.json?q=bishkek&aqi=no`)
+                    // .then(function (response) {
+            	    //     console.log(response.data);
+                    // })
     }
 }
