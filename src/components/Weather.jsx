@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { weatherAPI } from '../api/api';
 
 function Weather() {
 
-    const getWeather = () => {
-        weatherAPI.requestCurrentWeather();
-    }
+    const [state, setState] = useState()
 
     return (
         <div>
-            <button onClick={() => getWeather()}>
+            <button onClick={async () => {
+                const response = await weatherAPI.requestCurrentWeather()
+                console.log(response.data)
+                }}>
                 request weather
             </button>
         </div>
