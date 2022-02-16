@@ -10,8 +10,8 @@ const axios = Axios.create({
 export const weatherAPI = {
     requestCurrentWeather: (input) => {
         return axios.get(`/current.json?q=${input}&aqi=no`)
-                    // .then(function (response) {
-            	    //     console.log(response.data);
-                    // })
+                    .catch(function (error) {
+                        return error.toJSON()
+                    });
     }
 }

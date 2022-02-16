@@ -41,16 +41,21 @@ function Weather() {
     const setData = async (input) => {
 
         const response = await weatherAPI.requestCurrentWeather(input)
-            
-        // TODO: error handling
-        // debugger
 
-        const {country, localtime, name} = response.data.location
-        setLocation({country, localtime, name})
+        // console.log(response)
 
-        const {condition, temp_c} = response.data.current
-        setWeather({condition, temp_c})
-        // console.log(response.data)
+        if (response.status === 200)
+        {
+            const {country, localtime, name} = response.data.location
+            setLocation({country, localtime, name})
+    
+            const {condition, temp_c} = response.data.current
+            setWeather({condition, temp_c})
+        } else if (response.status === 400) {
+            setLocation( {country: '', localtime: '', name: 'No matching location found.'})
+            setWeather({temp_c: '', condition: {}})
+        }
+
     }
 
     const handleEvent = (event) => {
