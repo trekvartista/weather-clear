@@ -27,10 +27,20 @@ body {
     }
 }
 
+@keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
 .main {
     background-color: rgba(255, 255, 255, 0.2);
     margin: auto;
     border-radius: 15px;
+    animation: 1s ease-in-out 0s 1 FadeIn;
 }
 
 .searchBox input {
