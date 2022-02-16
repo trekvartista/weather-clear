@@ -67,7 +67,7 @@ function Weather() {
     }
 
     return (
-        <div className={s.main}>
+        <div key={location.name} className={s.main}>
             <div className={s.searchBox}>    
                 <input 
                     type='text'
