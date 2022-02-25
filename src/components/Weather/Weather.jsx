@@ -7,7 +7,9 @@ function Weather() {
 
     const initialLocation = {
         country: '',
-        localtime: '',
+        // localtime: '',
+        date: '',
+        time:'',
         name: ''
     }
 
@@ -47,7 +49,9 @@ function Weather() {
         if (response.status === 200)
         {
             const {country, localtime, name} = response.data.location
-            setLocation({country, localtime, name})
+            const date = localtime.split(' ')[0]
+            const time = localtime.split(' ')[1]
+            setLocation({country, date, time, name})
     
             const {condition, temp_c} = response.data.current
             setWeather({condition, temp_c})
@@ -82,7 +86,10 @@ function Weather() {
                 {location.name && 
                     <div className={s.name}> {location.name}, {location.country} </div>
                 }
-                <div className={s.date}> {location.localtime} </div>
+                <div className={s.datetime}>
+                    <div className={s.date}> {location.date} </div>
+                    <div className={s.time}> {location.time} </div>
+                </div>
             </div>
 
             <div className={s.tempBox}>
