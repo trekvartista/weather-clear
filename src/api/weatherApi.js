@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const axios = Axios.create({
-    baseURL: 'http://api.weatherapi.com/v1',
+    baseURL: 'https://api.weatherapi.com/v1',
     params: {
         key: '806aa4362e50400e988173920221302'
     }
