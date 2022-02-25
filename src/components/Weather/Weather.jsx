@@ -42,7 +42,7 @@ function Weather() {
 
         const response = await weatherAPI.requestCurrentWeather(input)
 
-        // console.log(response)
+        console.log(response)
 
         if (response.status === 200)
         {
@@ -86,7 +86,7 @@ function Weather() {
             </div>
 
             <div className={s.tempBox}>
-                {weather.temp_c &&
+                {weather.temp_c !== '' &&
                     <div className={s.temperature}> {weather.temp_c + '°c'} </div>
                 }
             </div>
