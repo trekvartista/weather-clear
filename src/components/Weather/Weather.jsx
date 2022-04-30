@@ -3,6 +3,8 @@ import { weatherAPI } from '../../api/weatherApi'
 import { ipAPI } from '../../api/ipApi'
 import s from './Weather.module.css'
 
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
 function Weather() {
 
     const initialLocation = {
@@ -44,14 +46,18 @@ function Weather() {
 
         const response = await weatherAPI.requestCurrentWeather(input)
 
-        console.log(response)
+        // console.log(response)
 
         if (response.status === 200)
         {
             const {country, localtime, name} = response.data.location
-            const date = localtime.split(' ')[0]
+            const date = new Date(localtime.split(' ')[0])
             const time = localtime.split(' ')[1]
-            setLocation({country, date, time, name})
+
+            const month = months[date.getMonth()]
+            const day = date.getDay() + 1
+
+            setLocation({country, date: month + ' ' + day, time, name})
     
             const {condition, temp_c} = response.data.current
             setWeather({condition, temp_c})
