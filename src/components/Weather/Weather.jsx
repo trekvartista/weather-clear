@@ -77,40 +77,43 @@ function Weather() {
     }
 
     return (
-        <div key={location.name} className={s.main}>
-            <div className={s.searchBox}>    
-                <input 
-                    type='text'
-                    autoComplete='false'
-                    placeholder='Search...'
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyUp={async (e) => { handleEvent(e) }}>
-                </input>
-            </div>
-
-            <div className={s.location}>
-                {location.name && 
-                    <div className={s.name}> {location.name}, {location.country} </div>
-                }
-                <div className={s.datetime}>
-                    <div className={s.date}> {location.date} </div>
-                    <div className={s.time}> {location.time} </div>
+        <div className={s.wrapper}>
+            <div className={s.main}>
+                <div className={s.searchBox}>    
+                    <input 
+                        type='text'
+                        autoComplete='false'
+                        placeholder='Search...'
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyUp={async (e) => { handleEvent(e) }}>
+                    </input>
                 </div>
-            </div>
 
-            <div className={s.tempBox}>
-                {weather.temp_c !== '' &&
-                    <div className={s.temperature}> {weather.temp_c + '°c'} </div>
-                }
-            </div>
+                <div className={s.location}>
+                    {location.name && 
+                        <div className={s.name}> {location.name}, {location.country} </div>
+                    }
+                    <div className={s.datetime}>
+                        <div className={s.date}> {location.date} </div>
+                        <div className={s.time}> {location.time} </div>
+                    </div>
+                </div>
 
-            <div className={s.weatherBox}>
-                <div className={s.condition}> {weather.condition.text} </div>
-                <div className={s.icon}>
-                    <img src={weather.condition.icon} alt=''/>
+                <div className={s.tempBox}>
+                    {weather.temp_c !== '' &&
+                        <div className={s.temperature}> {weather.temp_c + '°c'} </div>
+                    }
+                </div>
+
+                <div className={s.weatherBox}>
+                    <div className={s.condition}> {weather.condition.text} </div>
+                    <div className={s.icon}>
+                        <img src={weather.condition.icon} alt=''/>
+                    </div>
                 </div>
             </div>
         </div>
+
     )
 }
 
