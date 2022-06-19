@@ -53,9 +53,9 @@ function Weather() {
             const {country, localtime, name} = response.data.location
             const date = new Date(localtime.split(' ')[0])
             const time = localtime.split(' ')[1]
-
             const month = months[date.getMonth()]
-            const day = date.getDay() + 1
+            const day = localtime.split(' ')[0].slice(-2)
+            // console.log(date)
 
             setLocation({country, date: month + ' ' + day, time, name})
     
